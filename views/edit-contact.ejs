@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <% if (typeof errors != 'undefined') { %>
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                <% errors.forEach(err => { %>
+                    <li><%= err.msg %> </li>
+                <% }) %>
+            </ul>
+          </div>
+    <% } %>   
+    <form action="/contact/update" method="post">
+      <input type="hidden" name="oldName" value="<%= (contact.oldName) ?contact.oldName :contact.nama %>">   
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nama </label>
+          <input type="text" class="form-control" aria-describedby="Nama" name="nama" required value="<%= contact.nama %>">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">No Telp :</label>
+          <input type="number" class="form-control" name="noTelp" value="<%= contact.noTelp %>" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="<%= contact.email %>">
+            <div id="emailHelp" class="form-text" >We'll never share your email with anyone else.</div>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
