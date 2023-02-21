@@ -1,4 +1,5 @@
 const { loadContact, findContact ,addContact ,cekDuplikatNama , cekDuplikatEmail, deleteContact, updateContact } = require("./utils/contacts.js");
+const fs = require("fs");
 const express = require("express");
 const expressLayout = require("express-ejs-layouts");
 const morgan = require("morgan");
