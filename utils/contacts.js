@@ -13,7 +13,7 @@ if (!fs.existsSync(dataPath)) {
 }
 
 const loadContact = () => {
-    const file = fs.readFileSync("data/contact.json", "utf-8");
+    const file = fs.readFileSync("./data/contact.json", "utf-8");
     const kontak = JSON.parse(file);
     return kontak;
   };
@@ -31,7 +31,7 @@ const findContact = (nama) => {
 
 
 const saveContacts = (contacts) => {
-  fs.writeFileSync("data/contact.json", JSON.stringify(contacts, null, 2));
+  fs.writeFileSync("./data/contact.json", JSON.stringify(contacts, null, 2));
 }
 
 // const saveContacts = (contacts) => {
