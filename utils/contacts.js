@@ -63,7 +63,7 @@ const deleteContact = (nama) => {
   const contacts = loadContact()
   const filterContacts = contacts.users.filter((contact) => contact.nama !== nama)
   const filtered = JSON.stringify(filterContacts,null,2)
-  fs.writeFileSync("data/contact.json", `{"users":${filtered} }`);
+  fs.writeFileSync("./data/contact.json", `{"users":${filtered} }`);
   
 }
 
@@ -74,7 +74,7 @@ const updateContact = (contactBaru) => {
   delete contactBaru.oldName;
   filterContacts.push(contactBaru)
   const filtered = JSON.stringify(filterContacts,null,2)
-  fs.writeFileSync("data/contact.json", `{"users":${filtered} }`);
+  fs.writeFileSync("./data/contact.json", `{"users":${filtered} }`);
 }
 
 
